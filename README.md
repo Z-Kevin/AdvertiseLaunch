@@ -24,12 +24,12 @@
     return self;
 }
 - (void)setupBGLaunchAd {
-   [XYLanchAd setLaunchSourceType:SourceTypeLaunchImage];
-    [XYLanchAd setWaitDataDuration:2];
-    [HYBNetworking getWithUrl:AdvertiseURL refreshCache:YES success:^(id response) {
+    [XYLanchAd setLaunchSourceType:SourceTypeLaunchImage]; // 设置启动图加载类型
+    [XYLanchAd setWaitDataDuration:2]; // 设置最大等待时间 2s网络加载不过来直接跳过
+    [HYBNetworking getWithUrl:AdvertiseURL refreshCache:YES success:^(id response) { 
         JBBaseDataModel *baseModel = [JBBaseDataModel parseDataWithRequest:response];
         if (baseModel.retCode == 200) {
-            XYImageAdConfiguration *imageConfigure = [XYImageAdConfiguration new];
+            XYImageAdConfiguration *imageConfigure = [XYImageAdConfiguration new]; // 网络请求回来进行页面初始化加载
             imageConfigure.duration = 3;
             imageConfigure.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
             imageConfigure.imageNameOrURLString = [ValueUtils stringValue:baseModel.body forKey:@"imageUrl"];
