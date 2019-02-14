@@ -2,6 +2,7 @@
 用法非常简单，完全与你现有逻辑不进行任何耦合，直接添加工程中即可使用
 创建一个广告类BGLaunchAdManager 集成NSObject
 利用load方法在应用启动时候加载改类方法，进行初始化
+```
 + (void)load {
     [self shareManager];
 }
@@ -46,3 +47,4 @@
         
     }];
 }
+```
