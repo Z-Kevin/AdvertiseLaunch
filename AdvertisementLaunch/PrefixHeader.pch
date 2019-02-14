@@ -1,0 +1,14 @@
+//
+//  PrefixHeader.pch
+//  AdvertisementLaunch
+//
+//  Created by ZXY on 2019/2/11.
+//  Copyright © 2019年 JinRongBaGuaNv. All rights reserved.
+//
+
+#ifndef PrefixHeader_h
+#define PrefixHeader_h
+
+#define WEAKSELF __weak __typeof(self) weakSelf = self;
+
+#endif /* PrefixHeader_h */
